@@ -49,6 +49,38 @@
       margin-bottom: 15px;
     }
 
+    img {
+      opacity: 0.8;
+      margin-top: 2rem;
+      max-width: 100%;
+      max-height: 350px;
+      border-radius: 12px;
+      }
+
+    .announcement {
+      line-height: 1;
+      color: white;
+      font-size: 16px;
+      font-style: italic;
+      margin-top: 2.8rem;
+
+      a {
+        color:#fdf701;
+      }
+    }
+
+    .link {
+      line-height: 1;
+      color: white;
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-top: 22px;
+
+      a {
+        color: #fdf701;
+      }
+    }
+
     .description {
       line-height: 1;
       font-size: 18px;

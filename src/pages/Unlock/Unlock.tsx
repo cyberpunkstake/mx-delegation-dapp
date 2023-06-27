@@ -11,6 +11,7 @@ import { Ledger } from 'assets/Ledger';
 import { MultiversX } from 'assets/MultiversX';
 import { Wallet } from 'assets/Wallet';
 import { xPortal } from 'assets/xPortal';
+import StakeImg from 'assets/img/cyberpunk-stake.webp';
 
 import { network } from 'config';
 
@@ -105,12 +106,24 @@ export const Unlock = () => {
           <MultiversX />
         </div>
 
-        <strong className={styles.heading}>
-          MultiversX Delegation Dashboard
-        </strong>
+        <strong className={styles.heading}>Cyberpunk Stake</strong>
 
         <div className={styles.description}>
-          {`Delegate MultiversX (${network.egldLabel}) and earn up to 25% APY!`}
+          {`Stake ${network.egldLabel} and earn EGLD + $CYBER!`}
+        </div>
+
+        <img src={StakeImg} />
+
+        <div className={styles.announcement}>
+          <span>Announcement </span>
+          <a
+            href='https://medium.com/@cyberpunkcity/cyberpunk-stake-cyberpunk-city-3fc09604202b'
+            target='_blank'
+            rel='noreferrer'
+          >
+            here »
+          </a>
+          <br />
         </div>
 
         <div className={styles.connects}>
@@ -135,6 +148,24 @@ export const Unlock = () => {
               </span>
             </connect.component>
           ))}
+        </div>
+        <div className={styles.link}>
+          •
+          <a
+            href='https://twitter.com/CyberpunkStake'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <span>Twitter</span>
+          </a>
+          <span> •</span>
+          <a
+            href='https://t.me/cyberpunkstake'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <span>Telegram</span>
+          </a>
         </div>
       </div>
     </div>
