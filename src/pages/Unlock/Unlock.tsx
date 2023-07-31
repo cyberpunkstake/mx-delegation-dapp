@@ -11,8 +11,6 @@ import { Ledger } from 'assets/Ledger';
 import { MultiversX } from 'assets/MultiversX';
 import { Wallet } from 'assets/Wallet';
 import { xPortal } from 'assets/xPortal';
-import StakeImg from 'assets/img/cyberpunk-stake.webp';
-
 import { network } from 'config';
 
 import styles from './styles.module.scss';
@@ -29,11 +27,13 @@ export const Unlock = () => {
       name: 'MultiversX Web Wallet',
       background: '#000000',
       icon: Wallet,
-      component: WebWalletLoginButton
+      component: WebWalletLoginButton,
+      nativeAuth: true
     },
     {
       title: 'Hardware',
       name: 'Ledger',
+      nativeAuth: true,
       background: '#000000',
       icon: Ledger,
       component: LedgerLoginButton,
@@ -67,6 +67,7 @@ export const Unlock = () => {
       title: 'Mobile',
       name: 'xPortal Mobile Wallet',
       background: 'linear-gradient(225deg, #2C58DA 0%, #1A2ABA 100%)',
+      nativeAuth: true,
       icon: xPortal,
       isWalletConnectV2: true,
       component: WalletConnectLoginButton,
@@ -86,6 +87,7 @@ export const Unlock = () => {
       title: 'Browser',
       name: 'MultiversX DeFi Wallet',
       background: 'linear-gradient(225deg, #2C58DA 0%, #1A2ABA 100%)',
+      nativeAuth: true,
       icon: Extension,
       component: ExtensionLoginButton
     }
@@ -106,31 +108,19 @@ export const Unlock = () => {
           <MultiversX />
         </div>
 
-        <strong className={styles.heading}>Cyberpunk Stake</strong>
+        <strong className={styles.heading}>
+          MultiversX Delegation Dashboard
+        </strong>
 
         <div className={styles.description}>
-          {`Stake ${network.egldLabel} and earn EGLD + $CYBER!`}
-        </div>
-
-        <img src={StakeImg} />
-
-        <div className={styles.announcement}>
-          <span>Announcement </span>
-          <a
-            href='https://medium.com/@cyberpunkcity/cyberpunk-stake-cyberpunk-city-3fc09604202b'
-            target='_blank'
-            rel='noreferrer'
-          >
-            here »
-          </a>
-          <br />
+          {`Delegate MultiversX (${network.egldLabel}) and earn up to 25% APY!`}
         </div>
 
         <div className={styles.connects}>
           {connects.map((connect) => (
             <connect.component
               key={connect.name}
-              callbackRoute='/dashboard'
+              callbackRoute='/unlock'
               logoutRoute='/unlock'
               {...connect}
             >
@@ -148,24 +138,6 @@ export const Unlock = () => {
               </span>
             </connect.component>
           ))}
-        </div>
-        <div className={styles.link}>
-          •
-          <a
-            href='https://twitter.com/CyberpunkStake'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <span>Twitter</span>
-          </a>
-          <span> •</span>
-          <a
-            href='https://t.me/cyberpunkstake'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <span>Telegram</span>
-          </a>
         </div>
       </div>
     </div>
