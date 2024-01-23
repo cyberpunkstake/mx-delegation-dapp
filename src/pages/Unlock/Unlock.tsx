@@ -12,6 +12,7 @@ import { MultiversX } from 'assets/MultiversX';
 import { Wallet } from 'assets/Wallet';
 import { xPortal } from 'assets/xPortal';
 import { network } from 'config';
+import StakeImg from 'assets/img/cyberpunk-stake.webp';
 
 import styles from './styles.module.scss';
 
@@ -113,8 +114,9 @@ export const Unlock = () => {
         </strong>
 
         <div className={styles.description}>
-          {`Delegate MultiversX (${network.egldLabel}) and earn up to 25% APY!`}
+          {`Stake ${network.egldLabel} and earn EGLD + $CYBER!`}
         </div>
+        <img src={StakeImg} alt="" />
 
         <div className={styles.connects}>
           {connects.map((connect) => (
