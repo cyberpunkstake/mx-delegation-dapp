@@ -113,7 +113,7 @@ export const Unlock = () => {
         </strong>
 
         <div className={styles.description}>
-          {`Stake ${network.egldLabel} with Cyberpunk Stake for competitive rates!`}
+          {`Stake ${network.egldLabel} with Tera Finance`}
         </div>
 
         <div className={styles.connects}>
